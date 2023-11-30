@@ -1,0 +1,415 @@
+                                             CLIM 680 Project Website
+
+The “East African Climate Paradox” How does the  Coupled Model Intercomparison Project Phase 6 (CMIP6) compare to (CMIP5) under Representative Concentration Pathways (RCPs) 4.5 and 8.5.
+
+1.	Introduction:
+
+The Intergovernmental Panel on Climate Change (IPCC) estimates that the impacts of global warming are likely to reach 1.5°C between 2030 and 2052 relative to the pre-industrial levels under the “business as usual” scenario (IPCC, 2021). The resultant response of climate systems will be depicted by features such as increased intensity of precipitation extremes, a sharp decline in the number of wet spell lengths, and an increase in dry spell lengths (Giorgi, 2019)with widespread impacts on human and natural systems (IPCC, 2014b). Africa is one of the most susceptible areas to climate variability and change (IPCC, 2021). Understanding ongoing and projected climate variability and change is essential for long-term planning at the global, regional, and local scales and is particularly important for countries/regions whose economies are heavily reliant on rain-dependent sectors. East Africa (Fig.1) is one such region and is highly vulnerable to the effects of climate variability and change (IPCC, 2007). This region’s economy is strongly reliant on rain-fed agriculture (World Bank, 2008). 
+
+There are two rainy seasons for East African precipitation March to May (MAM), and October to December (OND) (Williams and Funk, 2011) Seasonal rainfall during MAM  is the main crop-growing season in EA; thus, excess or depressed seasonal rainfall during this season results in food insecurity in the region (World Bank, 2008; Muhati et al., 2018). The rainy season of MAM has been documented to exhibit a decreasing pattern while the OND rainy season has shown an increasing tendency (Ongoma and Chen, 2017; Makula and Zhou, 2021). Current observations show that the region is experiencing high rainfall variability, with the main concern being the reduction in the MAM seasonal rainfall (Tierney et al., 2015). 
+
+Since 1985, the rains have declined, with major consequences for livelihoods (Tierney et al., 2015; Ongoma and Chen, 2017). In contrast, climate model projections show increased long-range rainfall: this has been termed the ‘Eastern African climate change paradox. (Muhati et al., 2018; Wang et al., 2018) (Fig.3). Wang et al. (2018) observed that the “East African climate paradox” was due to the possible interaction of anthropogenic aerosol emissions with climate, natural variability and sea surface temperatures, acting singularly or in concert in altering the East African rainfall regime. He concluded that the observations might be due to a mismatch of time scales, between decadal-scale variability and longer-term climate changes in East Africa. This project examines the improvement in Coupled Model Intercomparison Project Phase Six (CMIP6) models against the predecessor CMIP5 in simulating mean and extreme precipitation over the East Africa region. The specific questions to address are: (a) To what extent can the CMIP6 GCMs (General circulation models) reproduce the observed mean climatology and seasonal rainfall extremes over the EA region? and (b) Does the CMIP6 GCMs cure the East African Paradox as compared to observational Precipitation data?
+
+2.	Data: 
+
+This study utilizes historical (9 models )and future multimodel simulations  (9 models ) from the newly released CMIP6 (Eyring et al., 2016). Monthly mean rainfall data from the 18 CMIP6 models were considered. The study considered a base period of 1980–2014 and three future periods, near 2015-2100  (2021–2040), mid (2041–2060) and far (2080–2099) future, to analyse future rainfall changes in the region based on the RCP4.5 & 8.5), middle-of-the-road and scenario (O’Neill et al., 2017). The study used only the first realization (r1i1p1f1) from each model. I  extract data between specified latitudes and longitudes
+            
+ds = ds.sel(lat=slice(6, -12), lon=slice(28, 42))
+
+The model output data were accessed from the Earth System Grid Federation from the Earth System Grid Federation (ESGF; https:// esgf-index1.ceda.ac.uk/search/cmip6-ceda/). Therefore, to validate the model data, the study utilized the latest gridded rainfall observations from the Climate Research Unit (CRUTS4.05; Harris et al., 2020). The datasets were obtained from the Centre for Environmental Data Analysis (CEDA) at https://catalogue.ceda.ac. uk/. The study also used the North Atlantic Oscillation Indices, which is a climate phenomenon that affects weather patterns in the North Atlantic Ocean region, including parts of North America, Europe and North Africa. In this case, NAO indices were applied to ensemble means for 9 Global Historical precipitation data for the period 1950-2014 to establish anomalies at a Global scale.
+
+
+Models
+"name": "CCCma CnESM5 ssp585",
+        "url": "http://esgf-data04.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/ScenarioMIP/CCCma/CanESM5/ssp585/r1i1p1f1/Amon/pr/gn/v20190429/pr_Amon_CanESM5_ssp585_r1i1p1f1_gn_201501-210012.nc",
+        "label": "CCCma CnESM5 ssp585",
+        "time_period": ("2015-01-01/2100-12-31",)
+    },
+    {
+        "name": "CCCma CnESM5 Historical",
+        "url": "http://esgf-data04.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/CMIP/CCCma/CanESM5/historical/r1i1p1f1/Amon/pr/gn/v20190429/pr_Amon_CanESM5_historical_r1i1p1f1_gn_185001-201412.nc",
+        "label": "CCCma CnESM5 Historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+    },
+    {
+        "name": "CSIRO-ARCCSS/ACCESS-CM2 Historical",
+        "url": "http://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/CMIP/CSIRO-ARCCSS/ACCESS-CM2/historical/r1i1p1f1/Amon/pr/gn/v20191108/pr_Amon_ACCESS-CM2_historical_r1i1p1f1_gn_185001-201412.nc",
+        "label": "CSIRO-ARCCSS/ACCESS-CM2 Historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+    },
+    {
+        "name": "CSIRO-ARCCSS/ACCESS-CM2 ssp585",
+        "url": "https://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/ScenarioMIP/CSIRO-ARCCSS/ACCESS-CM2/ssp585/r1i1p1f1/Amon/pr/gn/v20210317/pr_Amon_ACCESS-CM2_ssp585_r1i1p1f1_gn_201501-210012.nc",
+        "label": "CSIRO-ARCCSS/ACCESS-CM2 ssp585",
+        "time_period": ("2015-01-01/2100-12-31",)
+    },
+    {
+        "name": "CSIRO-ARCCSS/ACCESS-ESM1-5 ssp585",
+        "url": "https://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/ScenarioMIP/CSIRO/ACCESS-ESM1-5/ssp585/r1i1p1f1/Amon/pr/gn/v20210318/pr_Amon_ACCESS-ESM1-5_ssp585_r1i1p1f1_gn_201501-210012.nc",
+        "label": "CSIRO-ARCCSS/ACCESS-ESM1-5 ssp585",
+        "time_period": ("2015-01-01/2100-12-31",)
+    },
+    {
+        "name": "CSIRO-ARCCSS/ACCESS-ESM1-5 Historical",
+        "url": "http://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/CMIP/CSIRO/ACCESS-ESM1-5/historical/r1i1p1f1/Amon/pr/gn/v20191115/pr_Amon_ACCESS-ESM1-5_historical_r1i1p1f1_gn_185001-201412.nc",
+        "label": "CSIRO-ARCCSS/ACCESS-ESM1-5 Historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+
+    },
+    {
+        "name": "CMCC-CM2-SR5 ssp585",
+        "url": "https://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/ScenarioMIP/CMCC/CMCC-CM2-SR5/ssp585/r1i1p1f1/Amon/pr/gn/v20200622/pr_Amon_CMCC-CM2-SR5_ssp585_r1i1p1f1_gn_201501-210012.nc",
+        "label": "CMCC-CM2-SR5 ssp585",
+        "time_period": ("2015-01-01/2100-12-31",)
+    },
+    {
+        "name": "CMCC-CM2-SR5 Historical",
+        "url": "http://esgf-data04.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/CMIP/CMCC/CMCC-CM2-SR5/historical/r1i1p1f1/Amon/pr/gn/v20200616/pr_Amon_CMCC-CM2-SR5_historical_r1i1p1f1_gn_185001-201412.nc",
+        "label": "CMCC-CM2-SR5 Historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+    },
+    {
+        "name": "CAS/FGOALS-f3-L ssp585",
+        "url": "http://esg.lasg.ac.cn/thredds/dodsC/esg_dataroot/CMIP6/ScenarioMIP/CAS/FGOALS-f3-L/ssp585/r1i1p1f1/Amon/pr/gr/v20191013/pr_Amon_FGOALS-f3-L_ssp585_r1i1p1f1_gr_201501-210012.nc",
+        "label": "CAS/FGOALS-f3-L ssp585",
+        "time_period": ("2015-01-01/2100-12-31",)
+    },
+    {
+        "name": "CAS/FGOALS-f3-L Historical",
+        "url": "http://esg.lasg.ac.cn/thredds/dodsC/esg_dataroot/CMIP6/CMIP/CAS/FGOALS-f3-L/historical/r1i1p1f1/Amon/pr/gr/v20190927/pr_Amon_FGOALS-f3-L_historical_r1i1p1f1_gr_185001-201412.nc",
+        "label": "CAS/FGOALS-f3-L Historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+    },
+    {
+        "name": "MRI-ESM2-0 Historical",
+        "url": "http://aims3.llnl.gov/thredds/dodsC/css03_data/CMIP6/CMIP/MRI/MRI-ESM2-0/historical/r1i1p1f1/Amon/pr/gn/v20190222/pr_Amon_MRI-ESM2-0_historical_r1i1p1f1_gn_185001-201412.nc",
+        "label": "MRI-ESM2-0 historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+    },
+    {
+        "name": "MRI-ESM2-0 ssp585",
+        "url": "http://esgf-data03.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/ScenarioMIP/MRI/MRI-ESM2-0/ssp585/r1i1p1f1/Amon/pr/gn/v20191108/pr_Amon_MRI-ESM2-0_ssp585_r1i1p1f1_gn_201501-210012.nc",
+        "label": "MRI-ESM2-0 ssp585",
+        "time_period": ("2015-01-01/2100-12-31",)
+        
+    },
+    {
+                         
+        "name": "NUIST/NESM3 ssp585",
+        "url": "http://esg.lasg.ac.cn/thredds/dodsC/esg_dataroot/CMIP6/ScenarioMIP/NUIST/NESM3/ssp585/r1i1p1f1/Amon/pr/gn/v20190728/pr_Amon_NESM3_ssp585_r1i1p1f1_gn_201501-210012.nc",
+        "label": "NUIST/NESM3 ssp585",
+        "time_period": ("2015-01-01/2100-12-31",)
+
+    },
+    {
+        "name": "NUIST/NESM3 Historical",
+        "url": "http://esg.lasg.ac.cn/thredds/dodsC/esg_dataroot/CMIP6/CMIP/NUIST/NESM3/historical/r1i1p1f1/Amon/pr/gn/v20190630/pr_Amon_NESM3_historical_r1i1p1f1_gn_185001-201412.nc",
+        "label": "NUIST/NESM3 historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+        
+      
+    },
+    {
+
+        "name": "MIROC/MIROC6 ssp585",
+        "url": "http://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/ScenarioMIP/IPSL/IPSL-CM6A-LR/ssp585/r1i1p1f1/Amon/pr/gr/v20190903/pr_Amon_IPSL-CM6A-LR_ssp585_r1i1p1f1_gr_201501-210012.nc",
+        "label": "MIROC/MIROC6 ssp585",
+        "time_period": ("2015-01-01/2100-12-31",)
+        
+    },
+    {
+        "name": "IPSL-CM6A-LR ssp585",
+        "url": "http://esgf-data04.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/ScenarioMIP/IPSL/IPSL-CM6A-LR/ssp585/r1i1p1f1/Amon/pr/gr/v20190903/pr_Amon_IPSL-CM6A-LR_ssp585_r1i1p1f1_gr_201501-210012.nc",
+        "label": "IPSL-CM6A-LR ssp585",
+        "time_period": ("2015-01-01/2100-12-31",)
+        
+    },
+    {
+        "name": "IPSL-CM6A-LR Historical",
+        "url": "https://esgf.ceda.ac.uk/thredds/dodsC/esg_cmip6/CMIP6/CMIP/IPSL/IPSL-CM6A-LR/historical/r1i1p1f1/Amon/pr/gr/v20180803/pr_Amon_IPSL-CM6A-LR_historical_r1i1p1f1_gr_185001-201412.nc",
+        "label": "IPSL-CM6A-LR Historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+    },
+    {
+        "name": "MIROC/MIROC6 Historical",
+        "url": "http://esgf-data02.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/CMIP/MIROC/MIROC6/historical/r1i1p1f1/Amon/pr/gn/v20181212/pr_Amon_MIROC6_historical_r1i1p1f1_gn_195001-201412.nc",
+        "label": "MIROC/MIROC6 Historical",
+        "time_period": (“1980-01-01/2015-12-31",)
+
+    }
+
+    
+
+models = [
+    {
+        "name": "CCCma CnESM5 ssp245",
+        "url": "http://esgf-data04.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/ScenarioMIP/CCCma/CanESM5/ssp245/r1i1p1f1/Amon/pr/gn/v20190429/pr_Amon_CanESM5_ssp245_r1i1p1f1_gn_201501-210012.nc",
+        "label": "CCCma CnESM5 ssp245",
+        "time_period": ("2015-01-01/2100-12-31",)
+    },
+    {
+        "name": "CCCma CnESM5 Historical",
+        "url": "http://esgf-data04.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/CMIP/CCCma/CanESM5/historical/r1i1p1f1/Amon/pr/gn/v20190429/pr_Amon_CanESM5_historical_r1i1p1f1_gn_185001-201412.nc",
+        "label": "CCCma CnESM5 Historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+    },
+    {
+        "name": "CSIRO-ARCCSS/ACCESS-CM2 Historical",
+        "url": "http://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/CMIP/CSIRO-ARCCSS/ACCESS-CM2/historical/r1i1p1f1/Amon/pr/gn/v20191108/pr_Amon_ACCESS-CM2_historical_r1i1p1f1_gn_185001-201412.nc",
+        "label": "CSIRO-ARCCSS/ACCESS-CM2 Historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+    },
+    {
+        "name": "CSIRO-ARCCSS/ACCESS-CM2 ssp245",
+        "url": "http://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/ScenarioMIP/CSIRO-ARCCSS/ACCESS-CM2/ssp245/r1i1p1f1/Amon/pr/gn/v20191108/pr_Amon_ACCESS-CM2_ssp245_r1i1p1f1_gn_201501-210012.nc",
+        "label": "CSIRO-ARCCSS/ACCESS-CM2 ssp245",
+        "time_period": ("2015-01-01/2100-12-31",)
+    },
+    {
+        "name": "CSIRO-ARCCSS/ACCESS-ESM1-5 ssp245",
+        "url": "http://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/ScenarioMIP/CSIRO/ACCESS-ESM1-5/ssp245/r1i1p1f1/Amon/pr/gn/v20191115/pr_Amon_ACCESS-ESM1-5_ssp245_r1i1p1f1_gn_201501-210012.nc",
+        "label": "CSIRO-ARCCSS/ACCESS-ESM1-5 ssp245",
+        "time_period": ("2015-01-01/2100-12-31",)
+    },
+    {
+        "name": "CSIRO-ARCCSS/ACCESS-ESM1-5 Historical",
+        "url": "http://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/CMIP/CSIRO/ACCESS-ESM1-5/historical/r1i1p1f1/Amon/pr/gn/v20191115/pr_Amon_ACCESS-ESM1-5_historical_r1i1p1f1_gn_185001-201412.nc",
+        "label": "CSIRO-ARCCSS/ACCESS-ESM1-5 Historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+
+    },
+    {
+        "name": "CMCC-CM2-SR5 ssp245",
+        "url": "https://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/ScenarioMIP/CMCC/CMCC-CM2-SR5/ssp245/r1i1p1f1/Amon/pr/gn/v20200617/pr_Amon_CMCC-CM2-SR5_ssp245_r1i1p1f1_gn_201501-210012.nc",
+        "label": "CMCC-CM2-SR5 ssp245",
+        "time_period": ("2015-01-01/2100-12-31",)
+    },
+    {
+        "name": "CMCC-CM2-SR5 Historical",
+        "url": "http://esgf-data04.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/CMIP/CMCC/CMCC-CM2-SR5/historical/r1i1p1f1/Amon/pr/gn/v20200616/pr_Amon_CMCC-CM2-SR5_historical_r1i1p1f1_gn_185001-201412.nc",
+        "label": "CMCC-CM2-SR5 Historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+    },
+    {
+        "name": "CAS/FGOALS-f3-L ssp245",
+        "url": "http://esg.lasg.ac.cn/thredds/dodsC/esg_dataroot/CMIP6/ScenarioMIP/CAS/FGOALS-f3-L/ssp245/r1i1p1f1/Amon/pr/gr/v20191013/pr_Amon_FGOALS-f3-L_ssp245_r1i1p1f1_gr_201501-210012.nc",
+        "label": "CAS/FGOALS-f3-L ssp245",
+        "time_period": ("2015-01-01/2100-12-31",)
+    },
+    {
+        "name": "CAS/FGOALS-f3-L Historical",
+        "url": "http://esg.lasg.ac.cn/thredds/dodsC/esg_dataroot/CMIP6/CMIP/CAS/FGOALS-f3-L/historical/r1i1p1f1/Amon/pr/gr/v20190927/pr_Amon_FGOALS-f3-L_historical_r1i1p1f1_gr_185001-201412.nc",
+        "label": "CAS/FGOALS-f3-L Historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+    },
+    {
+        "name": "MRI-ESM2-0 Historical",
+        "url": "http://aims3.llnl.gov/thredds/dodsC/css03_data/CMIP6/CMIP/MRI/MRI-ESM2-0/historical/r1i1p1f1/Amon/pr/gn/v20190222/pr_Amon_MRI-ESM2-0_historical_r1i1p1f1_gn_185001-201412.nc",
+        "label": "MRI-ESM2-0 historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+    },
+    {
+        "name": "MRI-ESM2-0 ssp245",
+        "url": "http://aims3.llnl.gov/thredds/dodsC/css03_data/CMIP6/ScenarioMIP/MRI/MRI-ESM2-0/ssp245/r1i1p1f1/Amon/pr/gn/v20190222/pr_Amon_MRI-ESM2-0_ssp245_r1i1p1f1_gn_201501-210012.nc",
+        "label": "MRI-ESM2-0 ssp245",
+        "time_period": ("2015-01-01/2100-12-31",)
+        
+    },
+    {
+                         
+        "name": "NUIST/NESM3 ssp245",
+        "url": "http://esg.lasg.ac.cn/thredds/dodsC/esg_dataroot/CMIP6/ScenarioMIP/NUIST/NESM3/ssp245/r1i1p1f1/Amon/pr/gn/v20190731/pr_Amon_NESM3_ssp245_r1i1p1f1_gn_201501-210012.nc",
+        "label": "NUIST/NESM3 ssp245",
+        "time_period": ("2015-01-01/2100-12-31",)
+
+    },
+    {
+        "name": "NUIST/NESM3 Historical",
+        "url": "http://esg.lasg.ac.cn/thredds/dodsC/esg_dataroot/CMIP6/CMIP/NUIST/NESM3/historical/r1i1p1f1/Amon/pr/gn/v20190630/pr_Amon_NESM3_historical_r1i1p1f1_gn_185001-201412.nc",
+        "label": "NUIST/NESM3 historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+        
+      
+    },
+    {
+
+        "name": "MIROC/MIROC6 ssp245",
+        "url": "http://esgf.nci.org.au/thredds/dodsC/replica/CMIP6/ScenarioMIP/MIROC/MIROC6/ssp245/r1i1p1f1/Amon/pr/gn/v20190627/pr_Amon_MIROC6_ssp245_r1i1p1f1_gn_201501-210012.nc",
+        "label": "MIROC/MIROC6 ssp245",
+        "time_period": ("2015-01-01/2100-12-31",)
+        
+    },
+    {
+      
+        "name": "IPSL-CM6A-LR ssp245",
+        "url": "http://esgf3.dkrz.de/thredds/dodsC/cmip6/ScenarioMIP/IPSL/IPSL-CM6A-LR/ssp245/r1i1p1f1/Amon/pr/gr/v20190119/pr_Amon_IPSL-CM6A-LR_ssp245_r1i1p1f1_gr_201501-210012.nc",
+        "label": "IPSL-CM6A-LR ssp245",
+        "time_period": ("2015-01-01/2100-12-31",)
+        
+    },
+    {
+        "name": "IPSL-CM6A-LR Historical",
+        "url": "https://esgf.ceda.ac.uk/thredds/dodsC/esg_cmip6/CMIP6/CMIP/IPSL/IPSL-CM6A-LR/historical/r1i1p1f1/Amon/pr/gr/v20180803/pr_Amon_IPSL-CM6A-LR_historical_r1i1p1f1_gr_185001-201412.nc",
+        "label": "IPSL-CM6A-LR Historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+    },
+{
+"name": "MIROC/MIROC6 Historical",
+"url": "http://esgf-data02.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/CMIP/MIROC/MIROC6/historical/r1i1p1f1/Amon/pr/gn/v20181212/pr_Amon_MIROC6_historical_r1i1p1f1_gn_195001-201412.nc",
+"label": "MIROC/MIROC6 Historical",
+        "time_period": ("1980-01-01/2015-12-31",)
+    },
+    
+]
+
+
+5.	Data Analysis: 
+
+•	Precipitation data was treated to, Monthly mean analysis(1980-2014), (2015-2100)
+•	Trend analysis,  
+•	Annual mean analysis, 
+•	Significant differences in decadal mean rainfall, 
+•	Decadal mean analysis, seasonal mean analysis
+•	Ensemble means
+•	Nao Climate Indices
+
+
+Precipitation output before Bias correction
+
+ 
+
+
+
+
+
+Precipitation output after Bias correction
+
+ 
+
+NAO Statistics 
+
+NAO Positive Timesteps: 147
+NAO Neutral Timesteps: 528
+NAO Negative Timesteps: 181
+NAO Positive Time Range: 1950-10-01T00:00:00.000000000 to 2014-12-01T00:00:00.000000000
+NAO Negative Time Range: 1950-07-01T00:00:00.000000000 to 2014-08-01T00:00:00.000000000
+NAO Neutral Time Range: 1950-01-01T00:00:00.000000000 to 2014-11-01T00:00:00.000000000
+Precipitation Time Range: 1950-01-01T00:00:00.000000000 to 2014-12-01T00:00:00.000000000
+High Precipitation Statistics (1950-2014):
+Max: 42.503048
+Min: -36.26456
+Low Precipitation Statistics (1950-2014):
+Max: 29.899004
+Min: -33.102478
+Neutral Precipitation Statistics (1950-2014):
+Max: 32.06158
+Min: -29.267128
+
+Ensemble Means
+Processing model: MRI-ESM2-0 Historical...
+Processing model: NUIST/NESM3 Historical...
+Processing model: IPSL-CM6A-LR Historical...
+Processing model: MIROC/MIROC6 Historical...
+Ensemble mean values:
+Month 1: 104.269714
+Month 2: 105.979172
+Month 3: 133.800552
+Month 4: 140.417801
+Month 5: 78.571121
+Month 6: 44.603432
+Month 7: 37.446186
+Month 8: 39.721603
+Month 9: 45.091084
+Month 10: 59.994701
+Month 11: 90.533920
+Month 12: 106.965141
+
+NAO statistics Ensemble
+
+NAO Positive Time Range: 1950-10-01T00:00:00.000000000 to 2014-12-01T00:00:00.000000000
+NAO Negative Time Range: 1950-07-01T00:00:00.000000000 to 2014-08-01T00:00:00.000000000
+NAO Neutral Time Range: 1950-01-01T00:00:00.000000000 to 2014-11-01T00:00:00.000000000
+Precipitation Time Range: 1950-01-31T00:00:00.000000000 to 2014-11-30T00:00:00.000000000
+High Precipitation Statistics (1950-2014):
+Max: 170.04909
+Min: 0.00059128227
+Low Precipitation Statistics (1950-2014):
+Max: 156.96751
+Min: 0.0022904137
+Neutral Precipitation Statistics (1950-2014):
+Max: 161.08954
+Min: 0.0018590583
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+ 
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+Results 
+
+1.	CMIP6 has no overall advantage over CMIP5 in simulating total precipitation over the region. CMIP6 has inherent biases dry (wet) over most parts of the region during the MAM (OND) rainfall season. 
+2.	While the CMIP6 can reproduce the bimodal precipitation patterns better than the CMIP5 models.
+3.	Consequentially, CMIP6 can reproduce the mean climatology of the region albeit overestimating the OND rainfall mean. 
+4.	For the secular change of precipitation, the individual means and ensemble means cannot be wholly relied upon for projecting rainfall trends because they exhibit a wetting anomaly despite observations suggesting a drying anomaly. 
+5.	Spatially, the CMIP6 simulation of precipitation will be biased towards a dry (wet) simulation over most parts of East Africa with the driest (wettest) biases over south-eastern Tanzania (Lake Victoria basin) during MAM (OND) season. 
+6.	CMIP6 projects an increase in the MAM and OND precipitation averaged over East Africa by the end of the 21st century higher in the SSP5-8.5 than the SSP2-4.5. 
+7.	While this observation is consistent with CMIP5 and related studies, caution should be exercised in interpreting this projection considering CMIP6 has a weakness in the simulation of extreme rainfall events and the bimodal season precipitation means. 
+
+Conclusion  
+Based on this study, it can be concluded that CMIP6 is marginally better than CMIP5 in the simulation of the East African rainfall patterns. It means that the “East African Paradox” observation will not have been addressed.
+
+
+
+
+
+
+
+
+
+
+
+References
+
+Year	Author 	Title 	Journal 	Web link 
+2023	Lupien 	Past climate unravels the eastern African paradox.	Nature.	https://www.nature.com/articles/d41586-023-02297-y
+
+2022	Mölg , 	A mid-troposphere perspective on the East African climate paradox. 	Environ. Res. Lett.	https://iopscience.iop.org/article/10.1088/1748-9326/ac8565/meta
+2021	Pedersen +	An assessment of the performance of scenarios against historical global emissions for IPCC reports. 	Glob. Environ. Change.	https://www.sciencedirect.com/science/article/abs/pii/S0959378020307822
+2019	Giorgi,+	The response of precipitation characteristics to global warming from climate projections.
+	Earth Syst. Dyn	https://esd.copernicus.org/articles/10/73/2019/
+2021	IPCC	IPCC. Summary for Policymakers. In Global Warming of 1.5 °C. An IPCC Special Report on the Impacts of Global Warming of 1.5 °C above Pre-Industrial Levels and Related Global Greenhouse Gas Emission Pathways, in the Context of Strengthening the Global Response to the Threat of Climate Change, Sustainable Development, and Efforts to Eradicate Poverty; 	IPCC	https://www.ipcc.ch/site/assets/uploads/sites/2/2019/05/SR15_SPM_version_report_LR.pdf 
+
+2019	Wainwright + 	Eastern African Paradox’ rainfall decline due to shorter not less intense Long Rains.  	Clim Atmos Sci.	https://doi.org/10.1038/s41612-019-0091-7
+
+2018	Muhati +	Past and Projected Rainfall and Temperature Trends in a Sub-Humid Montane Forest in Northern Kenya Based on the CMIP5 Model Ensemble.	Glob. Ecol. Cons.	https://doi.org/10.1016/j.gecco.2018.e00469.
+
+2017	Lyon, Vigaud,	Unraveling East Africa's climate paradox. Climate extremes: Patterns and mechanisms.	Climate extremes.	https://doi.org/10.1002/9781119068020.ch16
+2015	Rowell + 	Reconciling past and future rainfall trends over East Africa. 	J. Clim.	https://www.researchgate.net/publication/349226633_ 
+
