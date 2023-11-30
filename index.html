@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLIM 680 Project Website</title>
+</head>
+<body>
+    <header>
+        <h1>The “East African Climate Paradox”</h1>
+        <h2>How does the Coupled Model Intercomparison Project Phase 6 (CMIP6) compare to (CMIP5) under Representative Concentration Pathways (RCPs) 4.5 and 8.5.</h2>
+    </header>
+
+
+<section>
+    <h2>1. Introduction:</h2>
+    <p>
+        The Intergovernmental Panel on Climate Change (IPCC) estimates that the impacts of global warming are likely to reach 1.5°C between 2030 and 2052 relative to the pre-industrial levels under the “business as usual” scenario (IPCC, 2021). The resultant response of climate systems will be depicted by features such as increased intensity of precipitation extremes, a sharp decline in the number of wet spell lengths, and an increase in dry spell lengths (Giorgi, 2019) with widespread impacts on human and natural systems (IPCC, 2014b). Africa is one of the most susceptible areas to climate variability and change (IPCC, 2021). Understanding ongoing and projected climate variability and change is essential for long-term planning at the global, regional, and local scales and is particularly important for countries/regions whose economies are heavily reliant on rain-dependent sectors. East Africa (Fig.1) is one such region and is highly vulnerable to the effects of climate variability and change (IPCC, 2007). This region’s economy is strongly reliant on rain-fed agriculture (World Bank, 2008).
+    </p>
+    <p>
+        There are two rainy seasons for East African precipitation March to May (MAM), and October to December (OND) (Williams and Funk, 2011) Seasonal rainfall during MAM  is the main crop-growing season in EA; thus, excess or depressed seasonal rainfall during this season results in food insecurity in the region (World Bank, 2008; Muhati et al., 2018). The rainy season of MAM has been documented to exhibit a decreasing pattern while the OND rainy season has shown an increasing tendency (Ongoma and Chen, 2017; Makula and Zhou, 2021). Current observations show that the region is experiencing high rainfall variability, with the main concern being the reduction in the MAM seasonal rainfall (Tierney et al., 2015).
+    </p>
+    <p>
+        Since 1985, the rains have declined, with major consequences for livelihoods (Tierney et al., 2015; Ongoma and Chen, 2017). In contrast, climate model projections show increased long-range rainfall: this has been termed the ‘Eastern African climate change paradox. (Muhati et al., 2018; Wang et al., 2018) (Fig.3). Wang et al. (2018) observed that the “East African climate paradox” was due to the possible interaction of anthropogenic aerosol emissions with climate, natural variability and sea surface temperatures, acting singularly or in concert in altering the East African rainfall regime. He concluded that the observations might be due to a mismatch of time scales, between decadal-scale variability and longer-term climate changes in East Africa. This project examines the improvement in Coupled Model Intercomparison Project Phase Six (CMIP6) models against the predecessor CMIP5 in simulating mean and extreme precipitation over the East Africa region. The specific questions to address are: (a) To what extent can the CMIP6 GCMs (General circulation models) reproduce the observed mean climatology and seasonal rainfall extremes over the EA region? and (b) Does the CMIP6 GCMs cure the East African Paradox as compared to observational Precipitation data?
+    </p>
+</section>
+<section>
+    <h2>2. Data:</h2>
+    <p>
+        This study utilizes historical (9 models) and future multimodel simulations (9 models) from the newly released CMIP6 (Eyring et al., 2016). Monthly mean rainfall data from the 18 CMIP6 models were considered. The study considered a base period of 1980–2014 and three future periods, near 2015-2100 (2021–2040), mid (2041–2060), and far (2080–2099) future, to analyze future rainfall changes in the region based on the RCP4.5 & 8.5), middle-of-the-road and scenario (O’Neill et al., 2017). The study used only the first realization (r1i1p1f1) from each model. Data was extracted between specified latitudes and longitudes:
+        <code>ds = ds.sel(lat=slice(6, -12), lon=slice(28, 42))</code>
+    </p>
+    <p>
+        The model output data were accessed from the Earth System Grid Federation from the Earth System Grid Federation (ESGF; <a href="https://esgf-index1.ceda.ac.uk/search/cmip6-ceda/">https://esgf-index1.ceda.ac.uk/search/cmip6-ceda/</a>). Therefore, to validate the model data, the study utilized the latest gridded rainfall observations from the Climate Research Unit (CRUTS4.05; Harris et al., 2020). The datasets were obtained from the Centre for Environmental Data Analysis (CEDA) at <a href="https://catalogue.ceda.ac.uk/">https://catalogue.ceda.ac.uk/</a>.
+    </p>
+    <p>
+        The study also used the North Atlantic Oscillation Indices, which is a climate phenomenon that affects weather patterns in the North Atlantic Ocean region, including parts of North America, Europe, and North Africa. In this case, NAO indices were applied to ensemble means for 9 Global Historical precipitation data for the period 1950-2014 to establish anomalies at a Global scale.
+    </p>
+</section>
+
+<section id="models">
+    <h2>3. Models:</h2>
+    <p>
+        The following climate models were used in this study to analyze historical and future rainfall data:
+    </p>
+    <ul>
+        <!-- Model 1 -->
+        <li>
+            <strong>CCCma CnESM5 ssp585</strong><br>
+            <a href="http://esgf-data04.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/ScenarioMIP/CCCma/CanESM5/ssp585/r1i1p1f1/Amon/pr/gn/v20190429/pr_Amon_CanESM5_ssp585_r1i1p1f1_gn_201501-210012.nc">Data Link</a><br>
+            Time Period: 2015-01-01 to 2100-12-31
+        </li>
+        <!-- Model 2 -->
+        <li>
+            <strong>CCCma CnESM5 Historical</strong><br>
+            <a href="http://esgf-data04.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/CMIP/CCCma/CanESM5/historical/r1i1p1f1/Amon/pr/gn/v20190429/pr_Amon_CanESM5_historical_r1i1p1f1_gn_185001-201412.nc">Data Link</a><br>
+            Time Period: 1980-01-01 to 2015-12-31
+        </li>
+        <!-- Model 3 -->
+        <li>
+            <strong>CSIRO-ARCCSS/ACCESS-CM2 Historical</strong><br>
+            <a href="http://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/CMIP/CSIRO-ARCCSS/ACCESS-CM2/historical/r1i1p1f1/Amon/pr/gn/v20191108/pr_Amon_ACCESS-CM2_historical_r1i1p1f1_gn_185001-201412.nc">Data Link</a><br>
+            Time Period: 1980-01-01 to 2015-12-31
+        </li>
+        <!-- Model 4 -->
+        <li>
+            <strong>CSIRO-ARCCSS/ACCESS-CM2 ssp585</strong><br>
+            <a href="https://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/ScenarioMIP/CSIRO-ARCCSS/ACCESS-CM2/ssp585/r1i1p1f1/Amon/pr/gn/v20210317/pr_Amon_ACCESS-CM2_ssp585_r1i1p1f1_gn_201501-210012.nc">Data Link</a><br>
+            Time Period: 2015-01-01 to 2100-12-31
+        </li>
+        <!-- Model 5 -->
+        <li>
+            <strong>CSIRO-ARCCSS/ACCESS-ESM1-5 ssp585</strong><br>
+            <a href="https://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/ScenarioMIP/CSIRO/ACCESS-ESM1-5/ssp585/r1i1p1f1/Amon/pr/gn/v20210318/pr_Amon_ACCESS-ESM1-5_ssp585_r1i1p1f1_gn_201501-210012.nc">Data Link</a><br>
+            Time Period: 2015-01-01 to 2100-12-31
+        </li>
+        <!-- Model 6 -->
+        <li>
+            <strong>CSIRO-ARCCSS/ACCESS-ESM1-5 Historical</strong><br>
+            <a href="http://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/CMIP/CSIRO/ACCESS-ESM1-5/historical/r1i1p1f1/Amon/pr/gn/v20191115/pr_Amon_ACCESS-ESM1-5_historical_r1i1p1f1_gn_185001-201412.nc">Data Link</a><br>
+            Time Period: 1980-01-01 to 2015-12-31
+        </li>
+        <!-- Model 7 -->
+        <li>
+            <strong>CMCC-CM2-SR5 ssp585</strong><br>
+            <a href="https://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/ScenarioMIP/CMCC/CMCC-CM2-SR5/ssp585/r1i1p1f1/Amon/pr/gn/v20200622/pr_Amon_CMCC-CM2-SR5_ssp585_r1i1p1f1_gn_201501-210012.nc">Data Link</a><br>
+            Time Period: 2015-01-01 to 2100-12-31
+        </li>
+        <!-- Model 8 -->
+        <li>
+            <strong>CMCC-CM2-SR5 Historical</strong><br>
+            <a href="http://esgf-data04.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/CMIP/CMCC/CMCC-CM2-SR5/historical/r1i1p1f1/Amon/pr/gn/v20200616/pr_Amon_CMCC-CM2-SR5_historical_r1i1p1f1_gn_185001-201412.nc">Data Link</a><br>
+            Time Period: 1980-01-01 to 2015-12-31
+        </li>
+        <!-- Model 9 -->
+        <li>
+            <strong>CAS/FGOALS-f3-L ssp585</strong><br>
+            <a href="http://esg.lasg.ac.cn/thredds/dodsC/esg_dataroot/CMIP6/ScenarioMIP/CAS/FGOALS-f3-L/ssp585/r1i1p1f1/Amon/pr/gr/v20191013/pr_Amon_FGOALS-f3-L_ssp585_r1i1p1f1_gr_201501-210012.nc">Data Link</a><br>
+            Time Period: 2015-01-01 to 2100-12-31
+        </li>
+        <!-- Model 10 -->
+        <li>
+            <strong>CAS/FGOALS-f3-L Historical</strong><br>
+            <a href="http://esg.lasg.ac.cn/thredds/dodsC/esg_dataroot/CMIP6/CMIP/CAS/FGOALS-f3-L/historical/r1i1p1f1/Amon/pr/gr/v20190927/pr_Amon_FGOALS-f3-L_historical_r1i1p1f1_gr_185001-201412.nc">Data Link</a><br>
+            Time Period: 1980-01-01 to 2015-12-31
+        </li>
+        <!-- Model 11 -->
+        <li>
+            <strong>MRI-ESM2-0 Historical</strong><br>
+            <a href="http://aims3.llnl.gov/thredds/dodsC/css03_data/CMIP6/CMIP/MRI/MRI-ESM2-0/historical/r1i1p1f1/Amon/pr/gn/v20190222/pr_Amon_MRI-ESM2-0_historical_r1i1p1f1_gn_185001-201412.nc">Data Link</a><br>
+            Time Period: 1980-01-01 to 2015-12-31
+        </li>
+        <!-- Model 12 -->
+        <li>
+            <strong>MRI-ESM2-0 ssp585</strong><br>
+            <a href="http://esgf-data03.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/ScenarioMIP/MRI/MRI-ESM2-0/ssp585/r1i1p1f1/Amon/pr/gn/v20191108/pr_Amon_MRI-ESM2-0_ssp585_r1i1p1f1_gn_201501-210012.nc">Data Link</a><br>
+            Time Period: 2015-01-01 to 2100-12-31
+        </li>
+        <!-- Model 13 -->
+        <li>
+            <strong>NUIST/NESM3 ssp585</strong><br>
+            <a href="http://esg.lasg.ac.cn/thredds/dodsC/esg_dataroot/CMIP6/ScenarioMIP/NUIST/NESM3/ssp585/r1i1p1f1/Amon/pr/gn/v20190728/pr_Amon_NESM3_ssp585_r1i1p1f1_gn_201501-210012.nc">Data Link</a><br>
+            Time Period: 2015-01-01 to 2100-12-31
+        </li>
+        <!-- Model 14 -->
+        <li>
+            <strong>NUIST/NESM3 Historical</strong><br>
+            <a href="http://esg.lasg.ac.cn/thredds/dodsC/esg_dataroot/CMIP6/CMIP/NUIST/NESM3/historical/r1i1p1f1/Amon/pr/gn/v20190630/pr_Amon_NESM3_historical_r1i1p1f1_gn_185001-201412.nc">Data Link</a><br>
+            Time Period: 1980-01-01 to 2015-12-31
+        </li>
+        <!-- Model 15 -->
+        <li>
+            <strong>MIROC/MIROC6 ssp585</strong><br>
+            <a href="http://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/ScenarioMIP/IPSL/IPSL-CM6A-LR/ssp585/r1i1p1f1/Amon/pr/gr/v20190903/pr_Amon_IPSL-CM6A-LR_ssp585_r1i1p1f1_gr_201501-210012.nc">Data Link</a><br>
+            Time Period: 2015-01-01 to 2100-12-31
+        </li>
+        <!-- Model 16 -->
+        <li>
+            <strong>IPSL-CM6A-LR ssp585</strong><br>
+            <a href="http://esgf-data04.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/ScenarioMIP/IPSL/IPSL-CM6A-LR/ssp585/r1i1p1f1/Amon/pr/gr/v20190903/pr_Amon_IPSL-CM6A-LR_ssp585_r1i1p1f1_gr_201501-210012.nc">Data Link</a><br>
+            Time Period: 2015-01-01 to 2100-12-31
+        </li>
+        <!-- Model 17 -->
+        <li>
+            <strong>IPSL-CM6A-LR Historical</strong><br>
+            <a href="https://esgf.ceda.ac.uk/thredds/dodsC/esg_cmip6/CMIP6/CMIP/IPSL/IPSL-CM6A-LR/historical/r1i1p1f1/Amon/pr/gr/v20180803/pr_Amon_IPSL-CM6A-LR_historical_r1i1p1f1_gr_185001-201412.nc">Data Link</a><br>
+            Time Period: 1980-01-01 to 2015-12-31
+        </li>
+        <!-- Model 18 -->
+        <li>
+            <strong>MIROC/MIROC6 Historical</strong><br>
+            <a href="http://esgf-data02.diasjp.net/thredds/dodsC/esg_dataroot/CMIP6/CMIP/MIROC/MIROC6/historical/r1i1p1f1/Amon/pr/gn/v20181212/pr_Amon_MIROC6_historical_r1i1p1f1_gn_195001-201412.nc">Data Link</a><br>
+            Time Period: 1980-
+
+
+
+
+<h2>5. Data Analysis:</h2>
+<ul>
+    <li>Precipitation data was treated to, Monthly mean analysis(1980-2014), (2015-2100)</li>
+    <li>Trend analysis</li>
+    <li>Annual mean analysis</li>
+    <li>Significant differences in decadal mean rainfall</li>
+    <li>Decadal mean analysis</li>
+    <li>Seasonal mean analysis</li>
+    <li>Ensemble means</li>
+    <li>Nao Climate Indices</li>
+</ul>
+<h2>Precipitation Output before Bias Correction</h2>
+  
+
+
+
+
+<h2> Precipitation output after Bias correction</h2>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NAO and Ensemble Statistics</title>
+</head>
+<body>
+
+<h2>NAO Statistics</h2>
+<p>NAO Positive Timesteps: 147</p>
+<p>NAO Neutral Timesteps: 528</p>
+<p>NAO Negative Timesteps: 181</p>
+<p>NAO Positive Time Range: 1950-10-01T00:00:00.000000000 to 2014-12-01T00:00:00.000000000</p>
+<p>NAO Negative Time Range: 1950-07-01T00:00:00.000000000 to 2014-08-01T00:00:00.000000000</p>
+<p>NAO Neutral Time Range: 1950-01-01T00:00:00.000000000 to 2014-11-01T00:00:00.000000000</p>
+<p>Precipitation Time Range: 1950-01-01T00:00:00.000000000 to 2014-12-01T00:00:00.000000000</p>
+<p>High Precipitation Statistics (1950-2014):</p>
+<ul>
+    <li>Max: 42.503048</li>
+    <li>Min: -36.26456</li>
+</ul>
+<p>Low Precipitation Statistics (1950-2014):</p>
+<ul>
+    <li>Max: 29.899004</li>
+    <li>Min: -33.102478</li>
+</ul>
+<p>Neutral Precipitation Statistics (1950-2014):</p>
+<ul>
+    <li>Max: 32.06158</li>
+    <li>Min: -29.267128</li>
+</ul>
+
+<h2>Ensemble Means</h2>
+<p>Processing model: MRI-ESM2-0 Historical...</p>
+<p>Processing model: NUIST/NESM3 Historical...</p>
+<p>Processing model: IPSL-CM6A-LR Historical...</p>
+<p>Processing model: MIROC/MIROC6 Historical...</p>
+<p>Ensemble mean values:</p>
+<ul>
+    <li>Month 1: 104.269714</li>
+    <li>Month 2: 105.979172</li>
+    <li>Month 3: 133.800552</li>
+    <li>Month 4: 140.417801</li>
+    <li>Month 5: 78.571121</li>
+    <li>Month 6: 44.603432</li>
+    <li>Month 7: 37.446186</li>
+    <li>Month 8: 39.721603</li>
+    <li>Month 9: 45.091084</li>
+    <li>Month 10: 59.994701</li>
+    <li>Month 11: 90.533920</li>
+    <li>Month 12: 106.965141</li>
+</ul>
+
+<h2>NAO Statistics Ensemble</h2>
+<p>NAO Positive Time Range: 1950-10-01T00:00:00.000000000 to 2014-12-01T00:00:00.000000000</p>
+<p>NAO Negative Time Range: 1950-07-01T00:00:00.000000000 to 2014-08-01T00:00:00.000000000</p>
+<p>NAO Neutral Time Range: 1950-01-01T00:00:00.000000000 to 2014-11-01T00:00:00.000000000</p>
+<p>Precipitation Time Range: 1950-01-31T00:00:00.000000000 to 2014-11-30T00:00:00.000000000</p>
+<p>High Precipitation Statistics (1950-2014):</p>
+<ul>
+    <li>Max: 170.04909</li>
+    <li>Min: 0.00059128227</li>
+</ul>
+<p>Low Precipitation Statistics (1950-2014):</p>
+<ul>
+    <li>Max: 156.96751</li>
+    <li>Min: 0.0022904137</li>
+</ul>
+<p>Neutral Precipitation Statistics (1950-2014):</p>
+<ul>
+    <li>Max: 161.08954</li>
+    <li>Min: 0.0018590583</li>
+</ul>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Figures Headings</title>
+</head>
+<body>
+
+<h2>NAO Index with Phases Indicated</h2>
+
+<h2>NAO Index with Phases over Time</h2>
+
+<h2>High Precipitation</h2>
+
+<h2>Low Precipitation</h2>
+
+<h2>Neutral Precipitation</h2>
+
+<h2>Mean Monthly Precipitation in East Africa</h2>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+
+<h1>Results</h1>
+
+<ol>
+    <li>CMIP6 has no overall advantage over CMIP5 in simulating total precipitation over the region. CMIP6 has inherent biases dry (wet) over most parts of the region during the MAM (OND) rainfall season.</li>
+    
+    <li>While the CMIP6 can reproduce the bimodal precipitation patterns better than the CMIP5 models.</li>
+    
+    <li>Consequentially, CMIP6 can reproduce the mean climatology of the region albeit overestimating the OND rainfall mean.</li>
+    
+    <li>For the secular change of precipitation, the individual means and ensemble means cannot be wholly relied upon for projecting rainfall trends because they exhibit a wetting anomaly despite observations suggesting a drying anomaly.</li>
+    
+    <li>Spatially, the CMIP6 simulation of precipitation will be biased towards a dry (wet) simulation over most parts of East Africa with the driest (wettest) biases over south-eastern Tanzania (Lake Victoria basin) during MAM (OND) season.</li>
+    
+    <li>CMIP6 projects an increase in the MAM and OND precipitation averaged over East Africa by the end of the 21st century higher in the SSP5-8.5 than the SSP2-4.5.</li>
+    
+    <li>While this observation is consistent with CMIP5 and related studies, caution should be exercised in interpreting this projection considering CMIP6 has a weakness in the simulation of extreme rainfall events and the bimodal season precipitation means.</li>
+</ol>
+
+<h2>Conclusion</h2>
+<p>Based on this study, it can be concluded that CMIP6 is marginally better than CMIP5 in the simulation of the East African rainfall patterns. It means that the “East African Paradox” observation will not have been addressed.</p>
+
+</body>
+</html>
+
+
+<h2>References</h2>
